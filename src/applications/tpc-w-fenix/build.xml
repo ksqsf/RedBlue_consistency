@@ -1,0 +1,713 @@
+<?xml version="1.0"?>
+
+<!-- 
+	build.xml for Ant to build and install the TPC-W Java implementation.
+	Copyright 2003 by Jan Kiefer.
+	
+	This file is distributed "as is". It comes with no warranty and the 
+	author takes no responsibility for the consequences of its use.
+	
+	Usage, distribution and modification is allowed to everyone, as long 
+	as reference to the author(s) is given and this license note is included.
+	updated by daniel porto
+-->
+
+<project name="TPC-W Servlets" default="build" basedir=".">
+	<!-- Set needed properties -->
+	<target name="init">
+		<tstamp />
+		<property name="outputDir" value="${basedir}/output/tpcw" />
+		<!-- <property name="outputDir" value="." />  -->
+
+		<!-- Deployment environment-->
+		<property name="tomcat_root" value="/var/tmp/${user.name}/txmud/tomcat6" />
+		<property name="mysql_root" value="/var/tmp/${user.name}/mysql-5.5.18" />
+		<property name="mysql_host" value="localhost" />
+		<property name="mysql_port" value="50000" />
+		<property name="jdbc.user" value="sa" />
+		<property name="jdbc.password" value="" />
+		<property name="jdbc.actualDriver" value="com.mysql.jdbc.Driver" />
+		<property name="jdbc.scratchpadClass" value="txstore.scratchpad.rdbms.DBExecuteScratchpad" />
+		<property name="jdbc.connPoolMax" value="100" />
+
+
+
+
+
+		<!--TPCW options -->
+		<property name="num.eb" value="10" />
+		<property name="num.item" value="1000" />
+		<property name="sql.bigCharType" value="varchar(500)" />
+		<!--#sql.bigCharType=tinyblob-->
+		<property name="sessionIdString" value="jsessionid=" />
+		<!--# use the right session string for your servlet container	#sessionIdString=$sessionid$ -->
+		<property name="standardUrl" value="http://localhost:8080" />
+		<property name="thinktime" value="1.0"/>
+		<property name="servletUrlPath" value="" />
+		<!-- #servletUrlPath=/servlet -->
+		<property name="tpcwUrlPath" value="/tpcw" />
+
+
+		<!-- txmud options-->
+		<property name="logicalclock" value="0-0" />
+		<property name="dcId" value="0" />
+		<property name="proxyId" value="0" />
+		<property name="totaldc" value="1" />
+		<property name="totalproxy" value="1" />
+		<property name="topologyfile" value="tpcw_txmud.xml" />
+		<property name="nthreads" value="20" />
+		<property name="dcCount" value = "1"/>
+		<property name="ssId" value="0"/>
+		<property name="dbFile" value="tpcw_txmud_db.xml"/>
+		<property name="scratchpadNum" value="10"/>
+
+		<!-- for Sifter and Vasco -->
+		<property name ="schemaPath" value = ""/>
+		<property name ="wpFilePath" value = ""/>
+
+		<!-- Target dependent options -->
+		<!-- default -->
+		<condition property="backend" value="mysql">
+			<not>
+				<isset property="backend" />
+			</not>
+		</condition>
+		<!-- mysql -->
+		<condition property="sqlFilter" value="sql-mysql_std.properties">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="dbName" value="mysql_std">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.initializeproxy" value="">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.setmeasurementinterval" value="">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getaborts" value="0">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getredtxn" value="0">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getbluetxn" value="TPCW_Database.transactions">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<!-- mysql database -->
+		<condition property="jdbc.path" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_redblue_semantics?user=${jdbc.user}&amp;password=${jdbc.password}">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.driver" value="${jdbc.actualDriver}">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.actualPath" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="mysql" casesensitive="no" trim="yes" />
+		</condition>
+
+		<!-- scratchpad -->
+		<condition property="sqlFilter" value="sql-mysql_spd_bypass.properties">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="dbName" value="mysql_spd_bypass">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.initializeproxy" value="">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.setmeasurementinterval" value="">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+
+
+
+		<condition property="txmud.getaborts" value="0">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getredtxn" value="0">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getbluetxn" value="TPCW_Database.transactions">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+
+
+		<!-- scratchpad database -->
+		<condition property="jdbc.path" value="jdbc:txmud:mysql_spd_bypass">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.driver" value="txstore.scratchpad.rdbms.jdbc.TxMudDriver">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.actualPath" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_spd_bypass">
+			<equals arg1="${backend}" arg2="scratchpad" casesensitive="no" trim="yes" />
+		</condition>
+
+
+
+		<!-- txmud -->
+		<condition property="sqlFilter" value="sql-mysql_redblue_semantics.properties">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="dbName" value="mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.initializeproxy" value="TPCW_Database.proxy= new TPCW_TxMud_Proxy(dcid,proxyid,nthreads,xmlfile2, dcCount, ssId, dbFile, scratchpadNum);">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.setmeasurementinterval" value="TPCW_Database.proxy.setMeasurementInterval(TPCW_Database.startmi,TPCW_Database.endmi);">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.getaborts" value="TPCW_Database.proxy.getAbortedTransactions()">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getredtxn" value="TPCW_Database.proxy.getRedTransactions()">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getbluetxn" value="TPCW_Database.proxy.getBlueTransactions()">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+
+		<!-- sifter -->
+		<condition property="sqlFilter" value="sql-mysql_std.properties">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="dbName" value="mysql_sifter">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.initializeproxy" value="TPCW_Database.proxy= new TPCW_TxMud_Proxy(dcid,proxyid,nthreads,xmlfile2, dcCount, ssId, dbFile, scratchpadNum);">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.setmeasurementinterval" value="TPCW_Database.proxy.setMeasurementInterval(TPCW_Database.startmi,TPCW_Database.endmi);">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.getaborts" value="TPCW_Database.proxy.getAbortedTransactions()">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getredtxn" value="TPCW_Database.proxy.getRedTransactions()">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getbluetxn" value="TPCW_Database.proxy.getBlueTransactions()">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="jdbc.path" value="jdbc:txmud:mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.driver" value="replicationlayer.core.txstore.scratchpad.rdbms.jdbc.TxMudDriver">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.actualPath" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="sifter" casesensitive="no" trim="yes" />
+		</condition>
+
+		<!-- vasco -->
+		<condition property="sqlFilter" value="sql-mysql_std.properties">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="dbName" value="mysql_vasco">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.initializeproxy" value="TPCW_Database.proxy= new TPCW_TxMud_Proxy(dcid,proxyid,nthreads,xmlfile2, dcCount, ssId, dbFile, scratchpadNum);">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.setmeasurementinterval" value="TPCW_Database.proxy.setMeasurementInterval(TPCW_Database.startmi,TPCW_Database.endmi);">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.getaborts" value="TPCW_Database.proxy.getAbortedTransactions()">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getredtxn" value="TPCW_Database.proxy.getRedTransactions()">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getbluetxn" value="TPCW_Database.proxy.getBlueTransactions()">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="jdbc.path" value="jdbc:txmud:mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.driver" value="org.mpi.vasco.txstore.scratchpad.rdbms.jdbc.TxMudDriver">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.actualPath" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="vasco" casesensitive="no" trim="yes" />
+		</condition>
+
+
+		<!-- txmud database -->
+		<condition property="jdbc.path" value="jdbc:txmud:mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.driver" value="txstore.scratchpad.rdbms.jdbc.TxMudDriver">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.actualPath" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="txmud" casesensitive="no" trim="yes" />
+		</condition>
+
+
+		<!-- txmud_sharedsc -->
+		<condition property="sqlFilter" value="sql-mysql_txmud_sharedcart.properties">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="dbName" value="mysql_txmud_sharedcart">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.initializeproxy" value="TPCW_Database.proxy= new TPCW_TxMud_Proxy(dcid,proxyid,nthreads,xmlfile2);">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.setmeasurementinterval" value="TPCW_Database.proxy.setMeasurementInterval(TPCW_Database.startmi,TPCW_Database.endmi);">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+
+		<condition property="txmud.getaborts" value="TPCW_Database.proxy.getAbortedTransactions()">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getredtxn" value="TPCW_Database.proxy.getRedTransactions()">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="txmud.getbluetxn" value="TPCW_Database.proxy.getBlueTransactions()">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+
+
+
+
+		<!-- txmud_sharedsc database -->
+		<condition property="jdbc.path" value="jdbc:txmud:mysql_redblue_semantics">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.driver" value="txstore.scratchpad.rdbms.jdbc.TxMudDriver">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+		<condition property="jdbc.actualPath" value="jdbc:mysql://${mysql_host}:${mysql_port}/mysql_txmud_sharedcart">
+			<equals arg1="${backend}" arg2="txmud_ssc" casesensitive="no" trim="yes" />
+		</condition>
+
+
+		<!-- Path to dependencies -->
+		<property name="cpServ" value="${tomcat_root}/lib/servlet-api.jar" />
+		<property name="cpJDBC" value="${tomcat_root}/lib/mysql-connector-java-5.1.17-bin.jar" />
+		<property name="cpTxMud" value="${tomcat_root}/lib/jdbctxmud.jar" />
+		<property name="cpLog" value="${tomcat_root}/lib/log4j-1.2.15.jar" />
+		<property name="cpNetty" value="${tomcat_root}/lib/netty-3.2.1.Final.jar" />
+		<property name ="sifterjar" value = "${tomcat_root}/lib/georeplication.jar"/>
+		<property name ="vascojar" value = "${tomcat_root}/lib/vasco-1.0-SNAPSHOT.jar"/>
+		<!-- Path to the Perl interpreter. -->
+		<property name="perlPath" value="/usr/bin/perl" />
+
+
+		<!-- Directory structure used-->
+		<!-- 	
+			./src/servlets
+			./src/populate
+			./build/servlets
+			./build/populate
+			./dist/doc 
+			./dist/doc/api 
+		-->
+
+		<!-- Directory where tpcw.war will be put with task 'inst' -->
+		<property name="webappDir" value="${tomcat_root}/webapps" />
+		<property name="servDir" value="servlets" />
+		<property name="dbDir" value="populate" />
+		<property name="rbeDir" value="rbe" />
+		<property name="tpcwDir" value="tpcw" />
+		<property name="imagesGenDir" value="${basedir}/${tpcwDir}/ImgGen" />
+		<!-- final destination of the Images created by  genimg.-->
+		<property name="imagesDest" value="${webappDir}/tpcw/Images" />
+		<property name="srcDir" value="${outputDir}/src" />
+		<property name="buildDir" value="${outputDir}/build" />
+		<property name="distDir" value="${outputDir}/dist" />
+		<property name="imagesDir" value="${outputDir}/Images" />
+
+		<property name="srcServDir" value="${srcDir}/${servDir}" />
+		<property name="srcDbDir" value="${srcDir}/${dbDir}" />
+		<property name="srcRbeDir" value="${srcDir}/${rbeDir}" />
+		<property name="buildServDir" value="${buildDir}/${servDir}" />
+		<property name="buildDbDir" value="${buildDir}/${dbDir}" />
+		<property name="buildRbeDir" value="${buildDir}/${rbeDir}" />
+		<property name="docDir" value="${distDir}/doc" />
+	</target>
+
+	<!-- Prepare directories -->
+	<target name="prepare" depends="init">
+		<mkdir dir="${srcServDir}" />
+		<mkdir dir="${srcDbDir}" />
+		<mkdir dir="${srcRbeDir}" />
+		<mkdir dir="${buildServDir}" />
+		<mkdir dir="${buildDbDir}" />
+		<mkdir dir="${buildRbeDir}" />
+		<mkdir dir="${distDir}" />
+		<mkdir dir="${docDir}" />
+		<mkdir dir="${imagesDir}" />
+	</target>
+
+	<!-- Copy source files and replace tokens according to the filter files -->
+	<target name="mksrc" depends="prepare" description="Replace tokens in src with values from properties in filter files.">
+		<filter token="num.item" value="${num.item}" />
+		<filter token="num.eb" value="${num.eb}" />
+
+		<filter token="sql.bigCharType" value="${sql.bigCharType}" />
+		<filter token="sessionIdString" value="${sessionIdString}" />
+		<filter token="standardUrl" value="${standardUrl}" />
+		<filter token="thinktime" value="${thinktime}" />
+		<filter token="servletUrlPath" value="${servletUrlPath}" />
+		<filter token="tpcwUrlPath" value="${tpcwUrlPath}" />
+
+
+		<filter token="tomcat_root" value="${tomcat_root}" />
+		<filter token="txmud.defaultclock" value="${defaultclock}" />
+		<filter token="txmud.dcId" value="${dcId}" />
+		<filter token="txmud.proxyId" value="${proxyId}" />
+		<filter token="txmud.totaldc" value="${totaldc}" />
+		<filter token="txmud.totalproxy" value="${totalproxy}" />
+
+		<filter token="txmud.topologyfile" value="tpcw_txmud.xml" />
+		<filter token="txmud.nthreads" value="${nthreads}" />
+		<filter token="txmud.dcCount" value = "${dcCount}"/>
+		<filter token="txmud.ssId" value="${ssId}"/>
+		<filter token="txmud.dbFile" value="${dbFile}"/>
+		<filter token="txmud.scratchpadNum" value="${scratchpadNum}"/>
+		<filter token="txmud.initializeproxy" value="${txmud.initializeproxy}" />
+		<filter token="txmud.logicalclock" value="${logicalclock}" />
+		<filter token="txmud.getaborts" value="${txmud.getaborts}" />
+		<filter token="txmud.getredtxn" value="${txmud.getredtxn}" />
+		<filter token="txmud.getbluetxn" value="${txmud.getbluetxn}" />
+		<filter token="txmud.setmeasurementinterval" value="${txmud.setmeasurementinterval}" />
+
+		<filter token="jdbc.user" value="${jdbc.user}" />
+		<filter token="jdbc.password" value="${jdbc.password}" />
+		<filter token="jdbc.actualDriver" value="${jdbc.actualDriver}" />
+		<filter token="jdbc.scratchpadClass" value="${jdbc.scratchpadClass}" />
+		<filter token="jdbc.connPoolMax" value="${jdbc.connPoolMax}" />
+		<filter token="jdbc.path" value="${jdbc.path}" />
+		<filter token="jdbc.driver" value="${jdbc.driver}" />
+		<filter token="jdbc.actualPath" value="${jdbc.actualPath}" />
+		<filter token="schemaPath" value="${schemaPath}"/>
+		<filter token="wpFilePath" value="${wpFilePath}"/>
+		<filter filtersFile="${sqlFilter}" />
+
+
+		<copy tofile="${srcDir}/tpcw-web.xml" filtering="on" preservelastmodified="false">
+			<fileset file="tpcw.xml" casesensitive="yes" />
+		</copy>
+
+		<copy todir="${srcServDir}" filtering="on" preservelastmodified="false">
+			<fileset dir="${tpcwDir}/${servDir}" casesensitive="yes">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<copy tofile="${srcServDir}/TPCW_Database.java" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="TPCW_Database.${dbName}.java" />
+			</fileset>
+		</copy>
+		<copy tofile="${srcServDir}/ShdDoBuyConfirmData.java" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="ShdDoBuyConfirmData.java" />
+			</fileset>
+		</copy>
+		<copy tofile="${srcServDir}/ShdDoCartData.java" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="ShdDoCartData.java" />
+			</fileset>
+		</copy>
+		<copy tofile="${buildDir}/tpcw_txmud.xml" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="${topologyfile}" />
+			</fileset>
+		</copy>
+
+		<copy tofile="${buildDir}/tpcw_txmud_db.xml" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="${dbFile}" />
+			</fileset>
+		</copy>
+
+		<copy todir="${srcRbeDir}" filtering="on" preservelastmodified="true">
+			<fileset dir="${tpcwDir}/${rbeDir}" casesensitive="yes">
+				<include name="**/*.java" />
+			</fileset>
+		</copy>
+		<filter token="images.path" value="${imagesDir}" />
+		<filter token="imagesGen.path" value="${imagesGenDir}" />
+		<copy todir="${srcDbDir}" filtering="on" preservelastmodified="true">
+			<fileset dir="${tpcwDir}/${dbDir}" casesensitive="yes">
+				<include name="**/*.java" />
+				<include name="populate_images" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Build the class files for the servlets and the database populate class -->
+	<target name="build" depends="mksrc" description="Build the *.class files from source.">
+		<javac srcdir="${srcServDir}" destdir="${buildServDir}">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement path="${srcServDir}" />
+				<pathelement location="${cpServ}" />
+				<pathelement location="${cpTxMud}" />
+				<pathelement location="${sifterjar}"/>
+				<pathelement location="${cpNetty}" />
+				<pathelement location="${cpLog}" />
+				<pathelement location="${vascojar}"/>
+			</classpath>
+		</javac>
+		<copy tofile="${buildDir}/tpcw_txmud.xml" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="${topologyfile}" />
+			</fileset>
+		</copy>
+		<copy tofile="${buildDir}/tpcw_txmud_db.xml" filtering="on" preservelastmodified="false">
+			<fileset dir="${basedir}" casesensitive="yes">
+				<include name="${dbFile}" />
+			</fileset>
+		</copy>
+		<javac srcdir="${srcDir}" destdir="${buildRbeDir}" includes="rbe/**">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement path="${srcRbeDir}" />
+				<pathelement location="${cpServ}" />
+				<pathelement location="${cpTxMud}" />
+				<pathelement location="${sifterjar}"/>
+				<pathelement location="${cpNetty}" />
+				<pathelement location="${cpLog}" />
+				<pathelement location="${vascojar}"/>
+			</classpath>
+		</javac>
+		<javac srcdir="${srcDbDir}" destdir="${buildDbDir}">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement path="${srcDbDir}" />
+				<pathelement location="${cpServ}" />
+				<pathelement location="${cpTxMud}" />
+				<pathelement location="${sifterjar}"/>
+				<pathelement location="${cpNetty}" />
+				<pathelement location="${cpLog}" />
+				<pathelement location="${vascojar}"/>
+			</classpath>
+		</javac>
+	</target>
+
+	<!-- Documentation -->
+	<target name="docs" depends="mksrc" description="Build the javadoc for the servlets.">
+		<javadoc destdir="${docDir}/api">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement path="${srcServDir}" />
+				<pathelement path="${srcRbeDir}" />
+				<pathelement location="${cpServ}" />
+				<pathelement location="${cpTxMud}" />
+				<pathelement location="${sifterjar}"/>
+				<pathelement location="${cpNetty}" />
+				<pathelement location="${cpLog}" />
+				<pathelement location="${vascojar}"/>
+			</classpath>
+			<fileset dir="${srcServDir}">
+				<include name="**/*.java" />
+			</fileset>
+			<fileset dir="${srcRbeDir}">
+				<include name="**/*.java" />
+			</fileset>
+		</javadoc>
+	</target>
+
+	<!-- Distribution -->
+	<target name="checkDist">
+		<uptodate property="war.notNeeded" targetfile="${distDir}/tpcw.war">
+			<srcfiles dir="${buildServDir}" includes="**/*.class" />
+		</uptodate>
+		<uptodate property="rbe.notNeeded">
+
+			<srcfiles dir="${srcRbeDir}" includes="**/*.java" />
+			<!-- 
+  			<mapper type="glob" from="*.java" to="${basedir}${file.separator}${distDir}${file.separator}${rbeDir}${file.separator}*.class"/>
+  			-->
+			<mapper type="glob" from="*.java" to="${distDir}${file.separator}${rbeDir}${file.separator}*.class" />
+		</uptodate>
+		<uptodate property="db.notNeeded" srcfile="${buildDbDir}/TPCW_populate.class" targetfile="${buildDbDir}/TPCW_populate.class" />
+		<uptodate property="dbImages.notNeeded" srcfile="${srcDbDir}/populate_images" targetfile="${distDir}/populate_images" />
+		<condition property="dist.notNeeded">
+			<and>
+				<isset property="war.notNeeded" />
+				<isset property="rbe.notNeeded" />
+				<isset property="db.notNeeded" />
+				<isset property="dbImages.notNeeded" />
+			</and>
+		</condition>
+	</target>
+	<target name="dist" depends="build, checkDist" unless="dist.notNeeded" description="Build the *.war file from *.class files.">
+		<war destfile="${distDir}/tpcw.war" webxml="${srcDir}/tpcw-web.xml">
+			<classes dir="${buildServDir}" />
+			<fileset file="${buildDir}/tpcw_txmud.xml" />
+			<fileset file="${buildDir}/tpcw_txmud_db.xml" />
+		</war>
+		<copy todir="${distDir}" preservelastmodified="true">
+			<fileset dir="${buildDbDir}" casesensitive="yes">
+				<include name="**/*.class" />
+				<include name="**/populate_images" />
+			</fileset>
+			<fileset dir="${srcDbDir}" casesensitive="yes">
+				<include name="populate_images" />
+			</fileset>
+			<fileset dir="${buildRbeDir}" casesensitive="yes">
+				<include name="**/*.class" />
+			</fileset>
+		</copy>
+		<copy file="${tpcwDir}/${rbeDir}/README" tofile="${docDir}/readme-rbe.txt" preservelastmodified="true" />
+		<copy file="${tpcwDir}/README" tofile="${docDir}/readme-tpcw.txt" preservelastmodified="true" />
+		<copy file="${tpcwDir}/runtpcw" tofile="${distDir}/runtpcw" preservelastmodified="true" />
+		<copy file="${basedir}/rbe.sh" tofile="${distDir}/rbe.sh" filtering="on" preservelastmodified="true" />
+		<chmod file="${distDir}/rbe.sh" perm="ugo+rxw" />
+		<copy file="${tpcwDir}/COPYRIGHT" tofile="${distDir}/copyright" preservelastmodified="true" />
+		<echo message="to execute the experiment go to ${distDir}/ and type ./rbe.sh -h" />
+		<echo message="done :D" />
+	</target>
+
+	<!-- Installation -->
+	<target name="inst" depends="dist" description="Copy war file to desired directory.">
+		<delete file="${webappDir}/tpcw.war" />
+		<delete dir="${webappDir}/tpcw" />
+		<copy file="${distDir}/tpcw.war" todir="${webappDir}" />
+		<unzip src="${distDir}/tpcw.war" dest="${webappDir}/${tpcwUrlPath}" />
+		<!--<antcall target="instimg" />-->
+
+	</target>
+	<target name="instimg" depends="init" description="copy image files back to tomcat_dir">
+		<mkdir dir="${imagesDest}" />
+		<copy todir="${imagesDest}" filtering="on" preservelastmodified="false">
+			<fileset dir="${imagesDir}" casesensitive="yes">
+				<include name="**/*.*" />
+			</fileset>
+		</copy>
+	</target>
+	<!-- DB generation -->
+	<target name="gendb" depends="dist" description="Generate Database data.">
+		<waitfor maxwait="10" maxwaitunit="second">
+			<and>
+				<socket server="${mysql_host}" port="${mysql_port}" />
+			</and>
+		</waitfor>
+
+
+		<java classname="TPCW_Populate" fork="true">
+			<classpath>
+				<pathelement path="${classpath}" />
+				<pathelement path="${srcDbDir}" />
+				<pathelement path="${distDir}" />
+				<pathelement location="${cpJDBC}" />
+				<pathelement location="${cpTxMud}" />
+				<pathelement location="${sifterjar}"/>
+				<pathelement location="${cpNetty}" />
+				<pathelement location="${cpServ}" />
+				<pathelement location="${vascojar}"/>
+			</classpath>
+			<arg value="${num.eb}" />
+			<arg value="${num.item}" />
+		</java>
+	</target>
+
+	<!-- Image generation -->
+	<target name="genimg" depends="dist" description="Generate the images for the items.">
+		<copy todir="${imagesDir}">
+			<fileset dir="${tpcwDir}/images" casesensitive="yes">
+				<include name="**/*.gif" />
+			</fileset>
+		</copy>
+		<exec dir="${tpcwDir}/ImgGen/ImgFiles" executable="make" output="make_img-gen.txt" failonerror="true" />
+		<exec dir="${distDir}" executable="${perlPath}" output="populate_images.txt" failonerror="true">
+			<arg line="populate_images" />
+		</exec>
+	</target>
+
+
+	<!-- clean up -->
+	<target name="clean" depends="init" description="Remove all generated files and directories (except installed *.war).">
+		<delete dir="${srcDir}" />
+		<delete dir="${buildDir}" />
+		<delete dir="${distDir}" />
+	</target>
+
+	<target name="purge" depends="init,clean" description="Remove all generated files and directories include generated images">
+		<delete dir="${imagesDir}" />
+		<delete dir="${mysql_root}" />
+		<delete dir="${tomcat_root}" />
+	</target>
+
+
+	<target name="tomcat-start" depends="init">
+		<exec executable="${tomcat_root}/bin/startup.sh" />
+		<waitfor maxwait="10" maxwaitunit="second">
+			<and>
+				<socket server="localhost" port="8080" />
+			</and>
+		</waitfor>
+		<echo message="tomcat started!!" />
+	</target>
+
+	<target name="tomcat-stop" depends="init">
+		<exec executable="${tomcat_root}/bin/shutdown.sh" />
+	</target>
+
+	<target name="tomcat-check-status">
+		<condition property="tomcat.started">
+			<socket server="localhost" port="8080" />
+		</condition>
+	</target>
+	<target name="mysql-check-status">
+		<condition property="mysql.started">
+			<socket server="${mysql_host}" port="${mysql_port}" />
+		</condition>
+	</target>
+
+
+
+
+
+
+	<target name="mysql-start" depends="init">
+		<exec dir="${mysql_root}" executable="${mysql_root}/bin/mysqld_safe" spawn="true">
+			<arg value="--defaults-file=${mysql_root}/mysql-test/include/default_mysqld.cnf" />
+			<arg value="--user=${user.name}" />
+			<arg value="--port=${mysql_port}" />
+			<arg value="--max_connections=10000" />
+			<arg value="--max_user_connections=10000" />
+			<arg value="--innodb_buffer_pool_size=8G" />
+			<arg value="--innodb_log_file_size=128M"/>
+			<arg value="--innodb_flush_method=O_DIRECT" />
+			<arg value="--skip-innodb_doublewrite" />
+			<arg value="--innodb_flush_log_at_trx_commit=0" />
+			<arg value="--query_cache_size=512M" />
+			<arg value="--innodb_lock_wait_timeout=1" />
+			<arg value="--innodb_file_per_table" />
+			<arg value="--default-storage-engine=innodb" />
+		</exec>
+		<waitfor maxwait="10" maxwaitunit="second">
+			<and>
+				<socket server="${mysql_host}" port="${mysql_port}" />
+			</and>
+		</waitfor>
+		<echo message="mysql started!!" />
+	</target>
+
+	<target name="mysql-stop" depends="init">
+		<exec dir="${mysql_root}" executable="killall">
+			<arg value="-9" />
+			<arg value="mysqld_safe" />
+			<arg value="mysql" />
+			<arg value="mysqld" />
+
+		</exec>
+	</target>
+
+
+</project>

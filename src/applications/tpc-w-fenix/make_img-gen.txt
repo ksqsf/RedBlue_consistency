@@ -1,0 +1,831 @@
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o cjpeg.o cjpeg.c
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'cjpeg.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix cjpeg.c -quiet -dumpbase cjpeg.c -mtune=generic -auxbase-strip cjpeg.o -O -version -o /tmp/cct9YS4m.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'cjpeg.o' '-mtune=generic'
+ as -V -Qy -o cjpeg.o /tmp/cct9YS4m.s
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o gdfontg.o /root/devel/txmud/src/applications/tpc-w-fenix/tpcw/ImgGen/gd-1.7.2/gdfontg.c
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'cjpeg.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'gdfontg.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix /root/devel/txmud/src/applications/tpc-w-fenix/tpcw/ImgGen/gd-1.7.2/gdfontg.c -quiet -dumpbase gdfontg.c -mtune=generic -auxbase-strip gdfontg.o -O -version -o /tmp/cc3HKHfc.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcapimin.o jcapimin.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcapistd.o jcapistd.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'gdfontg.o' '-mtune=generic'
+ as -V -Qy -o gdfontg.o /tmp/cc3HKHfc.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'gdfontg.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcapimin.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcapimin.c -quiet -dumpbase jcapimin.c -mtune=generic -auxbase-strip jcapimin.o -O -version -o /tmp/ccaI5nHl.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcapimin.c:21:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcapimin.o' '-mtune=generic'
+ as -V -Qy -o jcapimin.o /tmp/ccaI5nHl.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcapimin.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcapistd.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcapistd.c -quiet -dumpbase jcapistd.c -mtune=generic -auxbase-strip jcapistd.o -O -version -o /tmp/ccLbg1xq.s
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jccoefct.o jccoefct.c
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcapistd.c:19:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcapistd.o' '-mtune=generic'
+ as -V -Qy -o jcapistd.o /tmp/ccLbg1xq.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcapistd.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jccoefct.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jccoefct.c -quiet -dumpbase jccoefct.c -mtune=generic -auxbase-strip jccoefct.o -O -version -o /tmp/ccuBgSqv.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jccoefct.c:15:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jccolor.o jccolor.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jccoefct.o' '-mtune=generic'
+ as -V -Qy -o jccoefct.o /tmp/ccuBgSqv.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jccoefct.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jccolor.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jccolor.c -quiet -dumpbase jccolor.c -mtune=generic -auxbase-strip jccolor.o -O -version -o /tmp/cc5GeSGC.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jccolor.c:13:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcdctmgr.o jcdctmgr.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jccolor.o' '-mtune=generic'
+ as -V -Qy -o jccolor.o /tmp/cc5GeSGC.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jccolor.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcdctmgr.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcdctmgr.c -quiet -dumpbase jcdctmgr.c -mtune=generic -auxbase-strip jcdctmgr.o -O -version -o /tmp/ccvuw8zx.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcdctmgr.c:16:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jchuff.o jchuff.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcdctmgr.o' '-mtune=generic'
+ as -V -Qy -o jcdctmgr.o /tmp/ccvuw8zx.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcdctmgr.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jchuff.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jchuff.c -quiet -dumpbase jchuff.c -mtune=generic -auxbase-strip jchuff.o -O -version -o /tmp/ccIrgtYE.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jchuff.c:19:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcinit.o jcinit.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcmainct.o jcmainct.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jchuff.o' '-mtune=generic'
+ as -V -Qy -o jchuff.o /tmp/ccIrgtYE.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jchuff.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcinit.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcinit.c -quiet -dumpbase jcinit.c -mtune=generic -auxbase-strip jcinit.o -O -version -o /tmp/ccnzQ0QR.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcinit.c:20:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcinit.o' '-mtune=generic'
+ as -V -Qy -o jcinit.o /tmp/ccnzQ0QR.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcinit.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmainct.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcmainct.c -quiet -dumpbase jcmainct.c -mtune=generic -auxbase-strip jcmainct.o -O -version -o /tmp/ccqp9z7W.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcmainct.c:15:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcmarker.o jcmarker.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcmaster.o jcmaster.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmainct.o' '-mtune=generic'
+ as -V -Qy -o jcmainct.o /tmp/ccqp9z7W.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmainct.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmarker.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcmarker.c -quiet -dumpbase jcmarker.c -mtune=generic -auxbase-strip jcmarker.o -O -version -o /tmp/cc5cl8oY.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcmarker.c:13:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmarker.o' '-mtune=generic'
+ as -V -Qy -o jcmarker.o /tmp/cc5cl8oY.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmarker.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmaster.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcmaster.c -quiet -dumpbase jcmaster.c -mtune=generic -auxbase-strip jcmaster.o -O -version -o /tmp/ccS4cJ56.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcmaster.c:16:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmaster.o' '-mtune=generic'
+ as -V -Qy -o jcmaster.o /tmp/ccS4cJ56.s
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcomapi.o jcomapi.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcparam.o jcparam.c
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcmaster.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcomapi.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcomapi.c -quiet -dumpbase jcomapi.c -mtune=generic -auxbase-strip jcomapi.o -O -version -o /tmp/ccPpjV5c.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcomapi.c:14:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcomapi.o' '-mtune=generic'
+ as -V -Qy -o jcomapi.o /tmp/ccPpjV5c.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcomapi.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcparam.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcparam.c -quiet -dumpbase jcparam.c -mtune=generic -auxbase-strip jcparam.o -O -version -o /tmp/cc0nQiPi.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcparam.c:15:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcphuff.o jcphuff.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcparam.o' '-mtune=generic'
+ as -V -Qy -o jcparam.o /tmp/cc0nQiPi.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcparam.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcphuff.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcphuff.c -quiet -dumpbase jcphuff.c -mtune=generic -auxbase-strip jcphuff.o -O -version -o /tmp/ccxttCgn.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcphuff.c:17:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcprepct.o jcprepct.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jcsample.o jcsample.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcphuff.o' '-mtune=generic'
+ as -V -Qy -o jcphuff.o /tmp/ccxttCgn.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcphuff.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcprepct.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcprepct.c -quiet -dumpbase jcprepct.c -mtune=generic -auxbase-strip jcprepct.o -O -version -o /tmp/ccaIn6zC.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcprepct.c:19:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcprepct.o' '-mtune=generic'
+ as -V -Qy -o jcprepct.o /tmp/ccaIn6zC.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcprepct.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcsample.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jcsample.c -quiet -dumpbase jcsample.c -mtune=generic -auxbase-strip jcsample.o -O -version -o /tmp/ccxk0IVF.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jcsample.c:50:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcsample.o' '-mtune=generic'
+ as -V -Qy -o jcsample.o /tmp/ccxk0IVF.s
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jdatadst.o jdatadst.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jerror.o jerror.c
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jcsample.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jdatadst.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jdatadst.c -quiet -dumpbase jdatadst.c -mtune=generic -auxbase-strip jdatadst.o -O -version -o /tmp/ccdYyYYG.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jdatadst.o' '-mtune=generic'
+ as -V -Qy -o jdatadst.o /tmp/ccdYyYYG.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jdatadst.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jerror.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jerror.c -quiet -dumpbase jerror.c -mtune=generic -auxbase-strip jerror.o -O -version -o /tmp/ccoMYBgK.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jfdctflt.o jfdctflt.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jfdctfst.o jfdctfst.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jerror.o' '-mtune=generic'
+ as -V -Qy -o jerror.o /tmp/ccoMYBgK.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jerror.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctflt.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jfdctflt.c -quiet -dumpbase jfdctflt.c -mtune=generic -auxbase-strip jfdctflt.o -O -version -o /tmp/ccFtTqFQ.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jfdctflt.c:39:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctflt.o' '-mtune=generic'
+ as -V -Qy -o jfdctflt.o /tmp/ccFtTqFQ.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctflt.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctfst.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jfdctfst.c -quiet -dumpbase jfdctfst.c -mtune=generic -auxbase-strip jfdctfst.o -O -version -o /tmp/ccINpmXR.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jfdctint.o jfdctint.c
+In file included from jpeglib.h:1092,
+                 from jfdctfst.c:35:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctfst.o' '-mtune=generic'
+ as -V -Qy -o jfdctfst.o /tmp/ccINpmXR.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctfst.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctint.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jfdctint.c -quiet -dumpbase jfdctint.c -mtune=generic -auxbase-strip jfdctint.o -O -version -o /tmp/ccbRENoW.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jfdctint.c:28:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctint.o' '-mtune=generic'
+ as -V -Qy -o jfdctint.o /tmp/ccbRENoW.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jfdctint.o' '-mtune=generic'
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jmemmgr.o jmemmgr.c
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jmemmgr.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jmemmgr.c -quiet -dumpbase jmemmgr.c -mtune=generic -auxbase-strip jmemmgr.o -O -version -o /tmp/ccw6f602.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jmemmgr.c:30:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jmemnobs.o jmemnobs.c
+gcc -O -v -I/root/devel/txmud/src/applications/tpc-w-fenix -c -o jutils.o jutils.c
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jmemmgr.o' '-mtune=generic'
+ as -V -Qy -o jmemmgr.o /tmp/ccw6f602.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jmemmgr.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jmemnobs.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jmemnobs.c -quiet -dumpbase jmemnobs.c -mtune=generic -auxbase-strip jmemnobs.o -O -version -o /tmp/ccTGvdBc.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jmemnobs.c:20:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jmemnobs.o' '-mtune=generic'
+ as -V -Qy -o jmemnobs.o /tmp/ccTGvdBc.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jmemnobs.o' '-mtune=generic'
+Using built-in specs.
+Target: x86_64-linux-gnu
+Configured with: ../src/configure -v --with-pkgversion='Debian 4.4.5-8' --with-bugurl=file:///usr/share/doc/gcc-4.4/README.Bugs --enable-languages=c,c++,fortran,objc,obj-c++ --prefix=/usr --program-suffix=-4.4 --enable-shared --enable-multiarch --enable-linker-build-id --with-system-zlib --libexecdir=/usr/lib --without-included-gettext --enable-threads=posix --with-gxx-include-dir=/usr/include/c++/4.4 --libdir=/usr/lib --enable-nls --enable-clocale=gnu --enable-libstdcxx-debug --enable-objc-gc --with-arch-32=i586 --with-tune=generic --enable-checking=release --build=x86_64-linux-gnu --host=x86_64-linux-gnu --target=x86_64-linux-gnu
+Thread model: posix
+gcc version 4.4.5 (Debian 4.4.5-8) 
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jutils.o' '-mtune=generic'
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/cc1 -quiet -v -I/root/devel/txmud/src/applications/tpc-w-fenix jutils.c -quiet -dumpbase jutils.c -mtune=generic -auxbase-strip jutils.o -O -version -o /tmp/ccYp07Ed.s
+ignoring nonexistent directory "/usr/local/include/x86_64-linux-gnu"
+ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../x86_64-linux-gnu/include"
+ignoring nonexistent directory "/usr/include/x86_64-linux-gnu"
+#include "..." search starts here:
+#include <...> search starts here:
+ /root/devel/txmud/src/applications/tpc-w-fenix
+ /usr/local/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include
+ /usr/lib/gcc/x86_64-linux-gnu/4.4.5/include-fixed
+ /usr/include
+End of search list.
+GNU C (Debian 4.4.5-8) version 4.4.5 (x86_64-linux-gnu)
+	compiled by GNU C version 4.4.5, GMP version 4.3.2, MPFR version 3.0.0-p3.
+GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+Compiler executable checksum: dac4d891d068d1bed01868869b00bd17
+In file included from jpeglib.h:1092,
+                 from jutils.c:16:
+jpegint.h:284:30: warning: backslash and newline separated by space
+jpegint.h:285:28: warning: backslash and newline separated by space
+jpegint.h:286:62: warning: backslash and newline separated by space
+gcc -o tpcwIMG cjpeg.o gdfontg.o jcapimin.o jcapistd.o jccoefct.o jccolor.o jcdctmgr.o jchuff.o jcinit.o jcmainct.o jcmarker.o jcmaster.o jcomapi.o jcparam.o jcphuff.o jcprepct.o jcsample.o jdatadst.o jerror.o jfdctflt.o jfdctfst.o jfdctint.o jmemmgr.o jmemnobs.o jutils.o -lm
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jutils.o' '-mtune=generic'
+ as -V -Qy -o jutils.o /tmp/ccYp07Ed.s
+GNU assembler version 2.20.1 (x86_64-linux-gnu) using BFD version (GNU Binutils for Debian) 2.20.1-system.20100303
+COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/
+LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/4.4.5/../../../:/lib/:/usr/lib/
+COLLECT_GCC_OPTIONS='-O' '-v' '-I/root/devel/txmud/src/applications/tpc-w-fenix' '-c' '-o' 'jutils.o' '-mtune=generic'

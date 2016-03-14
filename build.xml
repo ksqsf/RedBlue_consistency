@@ -1,0 +1,641 @@
+<project name="txstore" default="dist" basedir=".">
+	<description>
+        simple example build file
+    </description>
+	<!-- set global properties for this build -->
+	<property name="outputDir" value="/var/tmp/${user.name}/output/txmud" />
+	<property name="txstore" location="src/txstore" />
+	<property name="stub" location="src/applications/simplestub" />
+	<property name="build" location="${outputDir}/build" />
+	<property name="dist" location="${outputDir}/dist" />
+
+	<path id="classpath">
+		<fileset dir="lib/">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+
+	<target name="init">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${build}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source ">
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${bft};${merklePB2};${merkle_test};${echo};${bench};${h2bench};${tpcw};${tpcw_new};${web};${BCI}" destdir="${build}" debug="true" debuglevel="lines,vars,source">
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+
+	<target name="instrument" depends="compile" description="Instrument some class files">
+		<java classname="BCI.InstrumentClass" fork="true">
+			<arg value="Applications.benchmark.BenchServer" />
+			<classpath>
+				<pathelement path="build;lib/javassist.jar" />
+			</classpath>
+		</java>
+	</target>
+
+
+	<target name="txmud">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+		    <include name="util/*.java" />
+			<include name="network/**/*.java" />
+			<include name="txstore/util/**/*.java" />
+			<include name="txstore/membership/**/*.java" />
+			<include name="txstore/messages/**/*.java" />
+			<include name="txstore/proxy/**/*.java" />
+			<include name="txstore/storageshim/**/*.java" />
+			<include name="txstore/coordinator/**/*.java" />
+			<exclude name="txstore/scratchpad/kvs/**/*.java" />
+			<exclude name="txstore/scratchpad/rdbms/OCCDBScratchpad.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/AbstractDBOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/AllOpsOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/LWWOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test1OCC.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test2OCC.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test3OCC.java" />
+
+			<classpath>
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="lib/jsqlparser.jar" />
+				<pathelement path="${build}/util" />
+				<pathelement path="${build}/network" />
+			</classpath>
+		</javac>
+	</target>
+	<target name="storageshim" depends="txmud">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+			<include name="applications/microbenchmark/**/*.java" />
+			<include name="applications/versionzero/**/*.java" />
+			<include name="applications/simplestub/KVWrite.java" />
+			<include name="applications/microbenchmark/MemoryKVScratchpadTest/*.java" />
+			<exclude name="applications/microbenchmark/SimpleTest/" />
+			<exclude name="applications/simplestub/**/*.java" />
+			<exclude name="applications/versionzero/AtomicTransactionOperationServer.java" />
+			<exclude name="txstore/scratchpad/kvs/**/*.java" />
+			<exclude name="applications/microbenchmark/FakedScratchpadTest/*.java" />
+			<exclude name="applications/microbenchmark/MicroUser.java" />
+			<exclude name="applications/microbenchmark/TxMudTest/MicroTest.java" />
+			<exclude name="applications/microbenchmark/MemoryKVScratchpadTest/OpenLoopFakedMemKVAppServer.java" />
+			<exclude name="txstore/scratchpad/rdbms/OCCDBScratchpad.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/AbstractDBOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/AllOpsOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/LWWOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test1OCC.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test2OCC.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test3OCC.java" />
+			<classpath>
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="lib/zookeeper-3.2.2.jar" />
+				<pathelement path="lib/jsqlparser.jar" />
+				<pathelement path="${build}/util" />
+				<pathelement path="${build}/network" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="scratchpad" depends="txmud">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+			<exclude name="txstore/scratchpad/kvs/**/*.java" />
+			<exclude name="txstore/scratchpad/resolution/KVExecutionPolicy.java" />
+			<exclude name="txstore/scratchpad/rdbms/OCCDBScratchpad.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/AbstractDBOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/AllOpsOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/resolution/LWWOCCExecution.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test1OCC.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test2OCC.java" />
+			<exclude name="txstore/scratchpad/rdbms/tests/Test3OCC.java" />
+			<include name="txstore/scratchpad/**/*.java" />
+			<classpath>
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="lib/jsqlparser.jar" />
+				<pathelement path="${build}/util" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="simpleproxy" depends="txmud">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+			<include name="applications/microbenchmark/**/*.java" />
+			<classpath>
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="${build}/util" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="fakedstorageshim" depends="storageshim">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+			<include name="applications/microbenchmark/FakedScratchpadTest/*.java" />
+			<exclude name="applications/microbenchmark/FakedScratchpadTest/OpenLoopFakedAppServer.java" />
+			<classpath>
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="lib/zookeeper-3.2.2.jar" />
+				<pathelement path="${build}/util" />
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="kvstorage" depends="storageshim">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+			<include name="applications/microbenchmark/MemoryKVScratchpadTest/*.java" />
+			<exclude name="applications/microbenchmark/MemoryKVScratchpadTest/OpenLoopFakedMemKVAppServer.java" />
+			<classpath>
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="lib/zookeeper-3.2.2.jar" />
+				<pathelement path="${build}/util" />
+			</classpath>
+		</javac>
+	</target>
+
+
+	<target name="scratchpadProxy" depends="scratchpad">
+		<mkdir dir="${build}" />
+		<javac srcdir="src" destdir="${build}">
+			<include name="applications/microbenchmark/ScratchpadTest/*.java" />
+			<classpath>
+				<pathelement path="lib/mysql-connector-java-5.1.17-bin.jar" />
+				<pathelement path="lib/jsqlparser.jar" />
+				<pathelement path="lib/netty-3.2.1.Final.jar" />
+				<pathelement path="lib/log4j-1.2.15.jar" />
+				<pathelement path="lib/zookeeper-3.2.2.jar" />
+				<pathelement path="${build}/util" />
+			</classpath>
+		</javac>
+	</target>
+
+
+	<property name="one-jar.ant.jar" value="lib/one-jar-ant-task-0.97.jar" />
+	<taskdef name="one-jar" classname="com.simontuffs.onejar.ant.OneJarTask" classpath="${one-jar.ant.jar}" onerror="report" />
+
+	<target name="jars" depends="scratchpad,storageshim,txmud,fakedstorageshim, scratchpadProxy,kvstorage" description="generate the main jars">
+		<tstamp>
+			<format property="current.time" pattern="yyyyMMdd_HHmmss" />
+		</tstamp>
+
+		<mkdir dir="${dist}/jars" />
+		<jar jarfile="${dist}/jars/coordinator.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="txstore.coordinator.NewCoordinator" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		<jar jarfile="${dist}/jars/jdbctxmud.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		<jar jarfile="${dist}/jars/storageshim.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.TxMudTest.MicroStorage" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		<jar jarfile="${dist}/jars/simplestorage.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.simplestub.StubSimpleStorage" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/simpleproxy.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.SimpleTest.SimpleProxy" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/openloopuser.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.OpenLoopMicroUser" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/fakedstorageshim.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.FakedScratchpadTest.FakedStorage" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/fakedproxy.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.FakedScratchpadTest.FakedProxy" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/microproxy.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.TxMudTest.MicroProxy" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		
+		<jar jarfile="${dist}/jars/preloadDB.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="util.PreloadDB" />
+			</manifest>
+				<fileset dir="${build}">
+					<include name="**/*.class" />
+				</fileset>
+			</jar>
+
+		<jar jarfile="${dist}/jars/dbproxy.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.DBTest.MicroDBProxy" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/spproxy.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.ScratchpadTest.ScratchPadProxy" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/initDB.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.util.InitDB" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/kvproxy.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.MemoryKVScratchpadTest.FakedMemKVProxy" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/kvstorage.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.MemoryKVScratchpadTest.FakedMemKVStorage" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+
+		<jar jarfile="${dist}/jars/kvdirectstorage.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.MemoryKVScratchpadTest.FakedMemKVDirectStorage" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		
+	<jar jarfile="${dist}/jars/testproxy.jar">
+		<manifest>
+			<attribute name="Built-By" value="${user.name}" />
+			<attribute name="Build-Date" value="${current.time}" />
+			<attribute name="Main-Class" value="applications.microbenchmark.TxMudTest.TestProxy" />
+		</manifest>
+		<fileset dir="${build}">
+			<include name="**/*.class" />
+		</fileset>
+	</jar>
+		
+		<jar jarfile="${dist}/jars/updatetable.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="txstore.coordinator.UpdateTable" />
+			</manifest>
+			<fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+		</jar>
+		
+		<jar jarfile="${dist}/jars/userSimulator.jar">
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Build-Date" value="${current.time}" />
+				<attribute name="Main-Class" value="applications.microbenchmark.ConcurrentUserSimulator" />
+			</manifest>
+		    <fileset dir="${build}">
+				<include name="**/*.class" />
+			</fileset>
+	  </jar>
+
+	</target>
+
+	<target name="dist" depends="jars" description="generate the distribution">
+		<mkdir dir="${dist}" />
+		<one-jar destfile="${dist}/coordinator-big.jar">
+			<main jar="${dist}/jars/coordinator.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+		<one-jar destfile="${dist}/storageshim-big.jar">
+			<main jar="${dist}/jars/storageshim.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+					<include name="jsqlparser.jar" />
+					<include name="mysql-connector-java-5.1.17-bin.jar" />
+					<include name="derby.jar" />
+					<include name="h2-1.2.132.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/simplestorage-big.jar">
+			<main jar="${dist}/jars/simplestorage.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/simpleproxy-big.jar">
+			<main jar="${dist}/jars/simpleproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/openloopuser-big.jar">
+			<main jar="${dist}/jars/openloopuser.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+					<include name="zookeeper-3.2.2.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/fakedstorageshim-big.jar">
+			<main jar="${dist}/jars/fakedstorageshim.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/fakedproxy-big.jar">
+			<main jar="${dist}/jars/fakedproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/microproxy-big.jar">
+			<main jar="${dist}/jars/microproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+					<include name="mysql-connector-java-5.1.17-bin.jar" />
+	                <include name="jsqlparser.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+		
+		<one-jar destfile="${dist}/preloadDB-big.jar">
+					<main jar="${dist}/jars/preloadDB.jar" />
+					<lib>
+						<fileset dir="lib">
+							<include name="mysql-connector-java-5.1.17-bin.jar" />
+						</fileset>
+					</lib>
+				</one-jar>
+
+		<one-jar destfile="${dist}/dbproxy-big.jar">
+			<main jar="${dist}/jars/dbproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="mysql-connector-java-5.1.17-bin.jar" />
+					<include name="jsqlparser.jar" />
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/spproxy-big.jar">
+			<main jar="${dist}/jars/spproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="mysql-connector-java-5.1.17-bin.jar" />
+					<include name="jsqlparser.jar" />
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/initDB-big.jar">
+			<main jar="${dist}/jars/initDB.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="mysql-connector-java-5.1.17-bin.jar" />
+					<include name="jsqlparser.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/kvproxy-big.jar">
+			<main jar="${dist}/jars/kvproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/kvstorage-big.jar">
+			<main jar="${dist}/jars/kvstorage.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+
+		<one-jar destfile="${dist}/kvdirectstorage-big.jar">
+			<main jar="${dist}/jars/kvdirectstorage.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+	
+		<one-jar destfile="${dist}/testproxy-big.jar">
+			<main jar="${dist}/jars/testproxy.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+					<include name="mysql-connector-java-5.1.17-bin.jar" />
+	                <include name="jsqlparser.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+		
+		<one-jar destfile="${dist}/updatetable-big.jar">
+			<main jar="${dist}/jars/updatetable.jar" />
+			<lib>
+				<fileset dir="lib">
+					<include name="netty-3.2.1.Final.jar" />
+					<include name="log4j-1.2.15.jar" />
+				</fileset>
+			</lib>
+		</one-jar>
+	
+	<one-jar destfile="${dist}/userSimulator-big.jar">
+				<main jar="${dist}/jars/userSimulator.jar" />
+				<lib>
+					<fileset dir="lib">
+						<include name="netty-3.2.1.Final.jar" />
+						<include name="log4j-1.2.15.jar" />
+						<include name="zookeeper-3.2.2.jar" />
+					</fileset>
+				</lib>
+			</one-jar>
+	</target>
+
+
+
+
+	<target name="test" depends="compile,dist" description="run junit test ">
+		<junit printsummary="yes" fork="yes" haltonfailure="yes" showoutput="yes">
+			<formatter type="plain" />
+
+			<classpath>
+				<pathelement path="./dist/lib/bft.jar:./lib/junit-4.4.jar" />
+			</classpath>
+			<test name="merkle.TestTools" />
+			<test name="merkle.TestMerkleTreePB" />
+			<!--<test name="merkle.TestMTCollectionWrapper"/>
+      <test name="merkle.TestMTMapWrapper"/>
+      <test name="merkle.TestEncapsulatedData"/>
+      <test name="merkle.TestMTArrayWrapper"/>-->
+		</junit>
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build}" />
+		<delete dir="${dist}" />
+	</target>
+
+	<target name="justjar" description="generate the jarfile">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}/lib" />
+
+		<!-- Put everything in ${build} into the MyProject-${DSTAMP}.jar file -->
+		<jar jarfile="${dist}/lib/bft.jar" basedir="${build}" />
+		<!-- Copying the jar file to lib directory of hdfs -->
+		<copy file="${dist}/lib/bft.jar" todir="simple_test" />
+
+	</target>
+
+	<target name="BCI" depends="compile" description="generate the BCI jarfile">
+		<!-- Create the distribution directory -->
+		<mkdir dir="${dist}/lib" />
+
+		<!-- Put everything in ${build/BCI} into the MyProject-${DSTAMP}.jar file -->
+		<jar jarfile="${dist}/lib/BCI.jar" basedir="${build}/BCI" />
+		<!-- Copying the jar file to lib directory of hdfs -->
+	</target>
+
+
+</project>
+

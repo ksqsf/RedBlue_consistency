@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<databases dbNum='1'>
+	<database dcId='0' dbId='0' dbHost='thor70.mpi-sws.org' dbPort='50000' dbUser='root' dbPwd='101010' 
+	dbName='rubis'   tableList='bids,buy_now,categories,comments,items,regions,users'    
+	tableLWW='bids,buy_now,categories,comments,items,regions,users'         
+	talbeOps=''             
+	redTable='bids,categories,comments,regions,users' 
+	blueTable='items,buy_now' url_prefix='jdbc:mysql://' > 
+	</database>
+</databases>

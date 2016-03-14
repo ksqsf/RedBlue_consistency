@@ -1,0 +1,11 @@
+<dataCenters dcNum='1'>
+																
+<dataCenter cdPort='60000' cdIP='139.19.158.57'> 					
+	<storageShims ssNum='1'> 												
+		<storageShim ssIP='139.19.158.58' ssPort='60001'/> 		
+	</storageShims> 														
+	<webProxies wpNum='1'> 													
+		<webproxy wpPort='60002' wpIP='139.19.158.62'/> 					
+	</webProxies> 															
+</dataCenter> 
+</dataCenters>

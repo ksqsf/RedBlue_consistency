@@ -1,0 +1,4 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<databases dbNum='1'>
+<database dcId='0' dbId='0' dbHost='139.19.158.56' dbPort='53306'	dbUser='sa' dbPwd='' dbName='mysql_redblue_semantics' 	tableList='address,author,cc_xacts,country,customer,item,order_line,orders,shopping_cart,shopping_cart_line' 	tableLWW='address,author,cc_xacts,country,customer,order_line,shopping_cart_line,shopping_cart'		talbeOps=''		redTable='address,author,cc_xacts,country,customer,order_line,shopping_cart_line,shopping_cart' blueTable='orders,item' url_prefix='jdbc:mysql://' > </database>
+</databases>

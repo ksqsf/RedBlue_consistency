@@ -1,0 +1,10 @@
+<dataCenters dcNum="1">
+	<dataCenter cdIP="ec2-46-51-167-8.eu-west-1.compute.amazonaws.com" cdPort="50000">
+		<storageShims ssNum="1">
+			<storageShim ssIP="ec2-46-51-141-1.eu-west-1.compute.amazonaws.com" ssPort="50002"></storageShim>
+		</storageShims>
+		<webProxies wpNum="1">
+			<webproxy wpIP="ec2-79-125-50-240.eu-west-1.compute.amazonaws.com" wpPort="50004"></webproxy>
+	        </webProxies>
+	</dataCenter>
+</dataCenters>

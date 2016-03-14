@@ -1,0 +1,11 @@
+<dataCenters dcNum="1">
+	<dataCenter cdIP="localhost" cdPort="50000">
+		<storageShims ssNum="1">
+			<storageShim ssIP="localhost" ssPort="50002"></storageShim>
+		</storageShims>
+		<webProxies wpNum="2">
+			<webproxy wpIP="localhost" wpPort="50003"></webproxy>
+			<webproxy wpIP="localhost" wpPort="50004"></webproxy>
+	        </webProxies>
+	</dataCenter>
+</dataCenters>

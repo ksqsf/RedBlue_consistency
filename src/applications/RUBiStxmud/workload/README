@@ -1,0 +1,8 @@
+transtion tables with a prefix "vasco" refer to files related to the vasco project
+All these tables additionally have two entries: GetAuctionsReadyForClose and CloseAuction
+
+
+vasco_transtions.xls is the first attempt
+vasco_transtions_1.xls has a problem that the state CloseAuction will go back to itself again
+vasco_transtions_2.xls reduces the errors introduced by the previous table
+vasco_transtions_3.xls lowers the probability of executing close auction related interactions

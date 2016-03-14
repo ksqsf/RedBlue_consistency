@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databases dbNum="1">
+        <database dcId="0" dbId="0" dbHost="ec2-79-125-40-176.eu-west-1.compute.amazonaws.com" dbPort="53306" dbUser="sa" dbPwd=""
+                dbName="mysql_redblue_semantics" tableList="address,author,cc_xacts,country,customer,item,order_line,orders,shopping_cart,shopping_cart_line" tableLWW="" redTable="" blueTable="address,author,cc_xacts,country,customer,item,order_line,orders,shopping_cart,shopping_cart_line" url_prefix="jdbc:mysql://">
+        </database>
+</databases>

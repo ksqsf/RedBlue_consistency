@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databases dbNum="1">
+	<database dcId="0" dbId="0" dbHost="139.19.131.147" dbPort="50000" dbUser="root" dbPwd="123456"
+		dbName="micro" tableList="t1,t2" tableLWW="t1" redTable="t1" blueTable="t2" url_prefix="jdbc:mysql://">
+		<table a="int(10)" b="int(10) unsigned" c="int(10) unsigned" d="int(10) unsigned" e="varchar(50)" tableName="t1" primaryKey="a" columnName="a,b,c,d,e"></table>
+		<table a="int(10)" b="int(10) unsigned" c="int(10) unsigned" d="int(10) unsigned" e="varchar(50)" tableName="t2" primaryKey="a" columnName="a,b,c,d,e"></table></database></databases>

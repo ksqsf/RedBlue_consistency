@@ -1,0 +1,5 @@
+(6)  Rework PassThroughnetworkQueue to work with the new "base"
+(7)  Make a new "base"
+
+
+(8)  Question:   can netty open multiple sockets (receive) on the same port?
