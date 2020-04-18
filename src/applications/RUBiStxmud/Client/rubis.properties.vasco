@@ -1,5 +1,5 @@
 # HTTP server information
-httpd_hostname =thor04.mpi-sws.org
+httpd_hostname = localhost
 httpd_port = 8080
 
 # C-JDBC server information
@@ -21,10 +21,10 @@ php_script_path = /PHP
 
 # Workload: precise which transition table to use
 workload_remote_client_nodes =  
-workload_remote_client_command = java -classpath /home/chengli/newJava/src/applications/RUBiStxmud/Client edu.rice.rubis.client.ClientEmulator
+workload_remote_client_command = java -classpath /home/ubuntu/RedBlue_consistency/src/applications/RUBiStxmud/Client edu.rice.rubis.client.ClientEmulator
 workload_number_of_clients_per_node =6
 
-workload_transition_table = /home/chengli/newJava/src/applications/RUBiStxmud/workload/transitions.txt
+workload_transition_table = /home/ubuntu/RedBlue_consistency/src/applications/RUBiStxmud/workload/new_transitions.txt
 workload_number_of_columns = 29
 workload_number_of_rows = 31
 workload_maximum_number_of_transitions = 1000000
@@ -43,17 +43,17 @@ database_server = localhost
 
 # Users policy
 #database_number_of_users = 1000000
-database_number_of_users = 1000000
-#database_number_of_users = 1000
+#database_number_of_users = 1000000
+database_number_of_users = 1000
 
 # Region & Category definition files
-database_regions_file = /home/chengli/newJava/src/applications/RUBiStxmud/database/ebay_regions.txt
-database_categories_file = /home/chengli/newJava/src/applications/RUBiStxmud/database/ebay_simple_categories.txt
+database_regions_file = /home/ubuntu/RedBlue_consistency/src/applications/RUBiStxmud/database/ebay_regions.txt
+database_categories_file = /home/ubuntu/RedBlue_consistency/src/applications/RUBiStxmud/database/ebay_simple_categories.txt
 
 # Items policy
 #database_number_of_old_items = 1000000
-database_number_of_old_items = 500000
-#database_number_of_old_items = 10000
+#database_number_of_old_items = 500000
+database_number_of_old_items = 0
 #database_number_of_old_items = 50000
 database_max_id_for_open_items = 33000
 database_percentage_of_unique_items = 80

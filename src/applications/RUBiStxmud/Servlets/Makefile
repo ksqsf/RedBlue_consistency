@@ -6,7 +6,8 @@ include ../config.mk
 #    Servlets version   #
 #########################
 
-Servlets = ServletPrinter Config TimeManagement BrowseCategories Auth RegisterUser RubisHttpServlet \
+# NOTE: RubisHttpServlet removed from Servlets
+Servlets = ServletPrinter Config TimeManagement BrowseCategories Auth RegisterUser \
 	BrowseRegions SearchItemsByCategory SearchItemsByRegion ViewItem ViewBidHistory \
 	ViewUserInfo SellItemForm RegisterItem PutCommentAuth PutComment StoreComment \
 	BuyNowAuth BuyNow StoreBuyNow PutBidAuth PutBid StoreBid AboutMe

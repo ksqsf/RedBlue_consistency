@@ -1,7 +1,7 @@
 ##############################
 #    Environment variables   #
 ##############################
-JAVA_HOME=/usr/lib/jvm/java-6-sun
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
 JAVA  = $(JAVA_HOME)/bin/java
 JAVAC = $(JAVA_HOME)/bin/javac
 #JAVAC = /usr/bin/jikes
@@ -10,7 +10,7 @@ JAVACOPTS =
 JAVACC = $(JAVAC) $(JAVACOPTS)
 RMIC = $(JAVA_HOME)/bin/rmic
 RMIREGISTRY= $(JAVA_HOME)/bin/rmiregistry
-CLASSPATH = .:$(JAVA_HOME)/jre/lib/rt.jar:/var/tmp/dcfp/txmud/tomcat6/lib/servlet-api.jar:/var/tmp/dcfp/txmud/tomcat6/lib/mysql-connector-java-5.1.18-bin.jar:$(PWD)
+CLASSPATH = .:$(JAVA_HOME)/jre/lib/rt.jar:$(HOME)/RedBlue_consistency/lib/servlet-api.jar:$(HOME)/RedBlue_consistency/lib/mysql-connector-java-5.1.18-bin.jar:$(PWD)
 JAVADOC = $(JAVA_HOME)/bin/javadoc
 JAR = $(JAVA_HOME)/bin/jar
 
