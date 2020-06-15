@@ -1,12 +1,12 @@
-drop database rubis;
+-- drop database rubis;
 
 -- create db
 create database if not exists rubis;
 connect rubis;
 
 -- create user
-create user if not exists 'sa'@'localhost';
-alter user 'sa'@'localhost' identified by '101010';
+-- create user if not exists 'sa'@'localhost';
+-- alter user 'sa'@'localhost' identified by '101010';
 
 -- grant privileges
 grant all on rubis.* to 'sa'@'%' identified by '101010';

@@ -52,9 +52,10 @@ public class GetAuctionsReadyForClose extends HttpServlet
     	String now = TimeManagement.currentDateToString();
         stmt =
             conn.prepareStatement(
-              "SELECT items.name, items.id, items.end_date, items.max_bid, items.nb_of_bids FROM items WHERE id < ? AND end_date>= '"+now+"' AND items.nb_of_bids > 0 AND RAND()<=0.09 LIMIT ?");
+              "SELECT items.name, items.id, items.end_date, items.max_bid, items.nb_of_bids FROM items WHERE id <= ? AND end_date > ? AND items.nb_of_bids > 0 AND RAND()<=0.09 LIMIT ?");
         stmt.setInt(1, maxIdOfOpenItems.intValue());
-        stmt.setInt(2, 50);
+        stmt.setString(2, now);
+        stmt.setInt(3, 50);
         rs = stmt.executeQuery();
         if (!rs.first())
         {
